@@ -91,8 +91,8 @@ const markup = templatesImage(images);
 ulElem.insertAdjacentHTML('afterbegin', markup);
 
 const gallery = new SimpleLightbox('.gallery-item a', {
-  captionsData: 'alt', // Вказуємо, що підписи братимуться з атрибута 'alt' зображення
-  captionDelay: 250, // Затримка появи підпису
+  captionsData: 'alt',
+  captionDelay: 250,
 });
 
 gallery.on('show.simplelightbox');
