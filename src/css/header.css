@@ -1,19 +1,8 @@
-.header {
-  padding: 20px 0;
-}
-.nav {
+.nav-list {
+  margin-top: 50px;
   display: flex;
-  justify-content: space-between;
-}
-.nav-logo {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-.nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   gap: 40px;
 }
 .nav-link {

@@ -2,20 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 9</title>
+    <title>Homework 09</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <h1>JavaScript Homework #9</h1>
-
-    <nav>
-      <ul>
-        <li><a href="./1-gallery.html">1. Gallery</a></li>
-        <li><a href="./2-form.html">2. Form</a></li>
-      </ul>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.1/dist/simple-lightbox.min.js"></script>
-    <script type="module" src="./js/1-gallery.js"></script>
+    <div class="container">
+      <main>
+        <!-- Loads the specified .html file -->
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link {=$highlight-act}" href="./1-gallery.html"
+              >Gallery</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {=$highlight-curr}" href="./2-form.html">Form</a>
+          </li>
+        </ul>
+      </main>
+    </div>
   </body>
 </html>

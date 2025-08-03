@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -64,28 +67,32 @@ const images = [
   },
 ];
 
-const galleryContainer = document.querySelector('.gallery');
+const ulElem = document.querySelector('.gallery');
 
-const galleryMarkup = images
-  .map(
-    ({ preview, original, description }) => `
-      <li class="gallery-item">
-        <a class="gallery-link" href="${original}">
-          <img
-            class="gallery-image"
-            src="${preview}"
-            alt="${description}"
-          />
-        </a>
-      </li>
-    `
-  )
-  .join('');
+function templateImage(img) {
+  const { preview, original, description } = img;
+  return `<li class="gallery-item">
+  <a class="gallery-link" href=${original}>
+    <img
+      class="gallery-image"
+      src=${preview}
+      alt=${description}
+    />
+  </a>
+</li>
+`;
+}
 
-galleryContainer.innerHTML = galleryMarkup;
+function templatesImage(imgs) {
+  return imgs.map(templateImage).join('\n');
+}
 
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionPosition: 'bottom',
-  captionDelay: 250,
+const markup = templatesImage(images);
+ulElem.insertAdjacentHTML('afterbegin', markup);
+
+const gallery = new SimpleLightbox('.gallery-item a', {
+  captionsData: 'alt', // Вказуємо, що підписи братимуться з атрибута 'alt' зображення
+  captionDelay: 250, // Затримка появи підпису
 });
+
+gallery.on('show.simplelightbox');
